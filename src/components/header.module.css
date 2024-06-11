@@ -1,0 +1,30 @@
+.headerContainer {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background: rgb(213, 200, 206);
+  background: linear-gradient(
+    256deg,
+    rgba(213, 200, 206, 1) 1%,
+    rgba(117, 187, 174, 0.7847732843137255) 70%
+  );
+}
+
+.header {
+  margin-top: 0;
+  margin-right: auto;
+  padding: 10px;
+  color: rgb(77, 74, 74);
+}
+
+.subheader {
+  margin-right: auto;
+  font-style: italic;
+  padding: 10px;
+  padding-top: 0;
+  color: rgb(77, 74, 74);
+}
+
+img {
+  margin: 10px;
+}
