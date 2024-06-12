@@ -21,6 +21,17 @@ main {
   border-radius: 5px;
   background-color: sandybrown;
   border: none;
-  color: rgb(62, 60, 60);
+  color: rgb(255, 255, 255);
+  box-shadow: 3px 14px 8px rgba(0, 0, 0, 0.1);
   font-weight: 600;
+  height: 2rem;
+}
+
+.formBtn:hover {
+  background-color: rgb(236, 121, 21);
+}
+
+.memeMainHeader {
+  color: rgb(125, 94, 82);
+  text-align: center;
 }
