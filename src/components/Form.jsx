@@ -3,7 +3,7 @@ import styles from "./form.module.css";
 import Meme from "./Meme";
 
 export default function Form() {
-  let counter;
+  let counter = 1;
   const [text1, setText1] = useState("");
   const [text2, setText2] = useState("");
   const [image, setImage] = useState("1");
@@ -21,22 +21,18 @@ export default function Form() {
     fetchUrl();
   }, []);
 
-  function handleGetImage(evt) {
-    evt.preventDefault();
-    console.log("Clicked!");
-
-    if (counter < 4) {
+  function handleGetImage() {
+    // counter = counter < 4 ? ((Number(image)) + 1) : 1
+    if (Number(image) < 3) {
       counter = Number(image) + 1;
     } else {
       counter = 1;
     }
-
-    setImage(counter);
     console.log(counter);
+    setImage(counter);
   }
 
-  function handleGetAdice(evt) {
-    evt.preventDefault();
+  function handleGetAdice() {
     console.log("Random advice is clicked!");
     fetchUrl();
   }
@@ -66,10 +62,7 @@ export default function Form() {
             Get a random Meme Image
           </button>
 
-          <button
-            onClick={(evt) => handleGetAdice(evt)}
-            className={styles.formBtn}
-          >
+          <button onClick={() => handleGetAdice()} className={styles.formBtn}>
             Get a random advice
           </button>
         </div>
