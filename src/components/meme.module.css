@@ -4,11 +4,33 @@
   position: relative;
 }
 
-.memeText {
+.memeAdviceText {
   font-weight: 600;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(54, 0, 249, 0.7);
+  padding: 13px;
+}
+
+.memeTopText {
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(54, 0, 249, 0.7);
+  padding: 13px;
+}
+
+.memeBottomText {
+  font-weight: 600;
+  position: absolute;
+  right: 50%;
+  transform: translateY(550%);
   color: white;
   font-size: 1.5em;
   text-shadow: 2px 2px 4px rgba(54, 0, 249, 0.7);
