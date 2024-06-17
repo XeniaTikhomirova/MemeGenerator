@@ -15,7 +15,7 @@ export default function Form() {
     },
   });
 
-  // to gat advices for "Random-text-option":
+  // to get advices for "Random-text-option":
   const URL = "https://api.adviceslip.com/advice";
 
   async function fetchUrl() {
@@ -33,14 +33,21 @@ export default function Form() {
     fetchUrl();
   }, []);
 
+  console.log(meme.text);
+
   function handleInputChange(evt) {
-    const { name, value } = evt.target;
-    setMeme((prev) => ({
-      ...prev,
-      text: {
-        [name]: value,
-      },
-    }));
+    const nameInput = evt.target.name;
+    const valueInput = evt.target.value;
+
+    setMeme((prev) => {
+      return {
+        ...prev,
+        text: {
+         ...meme.text,
+          [nameInput]: valueInput,
+        },
+      };
+    });
   }
 
   function addCustomText() {
@@ -82,7 +89,7 @@ export default function Form() {
             name="topText"
             placeholder="Put some text...."
             value={meme.text.topText}
-            onChange={(evt) => handleInputChange(evt)}
+            onChange={handleInputChange}
           />
           <input
             className={styles.text2}
@@ -90,7 +97,7 @@ export default function Form() {
             name="bottomText"
             placeholder="Put some text..."
             value={meme.text.bottomText}
-            onChange={(evt) => handleInputChange(evt)}
+            onChange={handleInputChange}
           />
 
           <button onClick={addCustomText} className={styles.formBtn}>
