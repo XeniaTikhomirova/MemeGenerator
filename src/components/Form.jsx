@@ -33,18 +33,15 @@ export default function Form() {
     fetchUrl();
   }, []);
 
-  console.log(meme.text);
-
   function handleInputChange(evt) {
-    const nameInput = evt.target.name;
-    const valueInput = evt.target.value;
+    const { name, value } = evt.target;
 
     setMeme((prev) => {
       return {
         ...prev,
         text: {
-         ...meme.text,
-          [nameInput]: valueInput,
+          ...meme.text,
+          [name]: value || "",
         },
       };
     });
@@ -64,7 +61,6 @@ export default function Form() {
   function addImage() {
     setMeme((prevValue) => {
       const newId = prevValue.image.id < 3 ? prevValue.image.id + 1 : 1;
-      console.log(newId);
       return {
         ...prevValue,
         image: {
@@ -73,14 +69,15 @@ export default function Form() {
         },
       };
     });
-    console.log(meme);
   }
 
   return (
     <div>
       <main>
         <h1 className={styles.memeMainHeader}>
-          Type your own Text for your custom Meme or choose random one...
+          📝 Write your own Text
+          <br /> for your custom Meme or ...
+          <br /> choose random one... ✨
         </h1>
         <div className={styles.formMeme}>
           <input

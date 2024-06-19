@@ -12,8 +12,8 @@ export default function Meme(props) {
       )}
       <img
         src={props.image}
-        height="370px"
-        width="370px"
+        height="400px"
+        width="400px"
         className={styles.imageMeme}
         key={props.image.id}
       />
